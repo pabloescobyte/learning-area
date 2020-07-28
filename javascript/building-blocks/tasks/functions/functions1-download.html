@@ -30,12 +30,24 @@
     let para = document.createElement('p');
 
     // Add your code here
+    function getRandomIntInclusive(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
 
+    const person = getRandomIntInclusive(0, names.length);
+    //console.log('const =' + person);
+
+    function chooseName() {
+      para.textContent = names[person];
+    }
     // Don't edit the code below here!
 
     const section = document.querySelector('section');
-
     section.appendChild(para);
+    chooseName();
+    //console.log(names[person]);
   </script>
 
 </html>
