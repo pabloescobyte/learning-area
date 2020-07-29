@@ -42,7 +42,22 @@
     let color = 'blue';
 
     // Add your code here
+    function drawRect(startX, startY, rectW, rectH, rectColor) {
+      // check there's a context to render to first
+      if (ctx) {
+        // clear the canvas before redraw
+        ctx.clearRect(0, 0, ctx.width, ctx.height);
 
+        // set the fill color
+        ctx.fillStyle = rectColor;
+
+        // render the rectangle using passed parameters
+        ctx.fillRect(startX, startY, rectW, rectH);
+      }
+    }
+
+    // call the function and draw a rectangle once the page has loaded
+    drawRect(x, y, width, height, color);
     // Don't edit the code below here!
 
     const section = document.querySelector('section');
