@@ -31,8 +31,35 @@
 
     // Add your code here
 
-    // Don't edit the code below here!
+    function random(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
 
+    const person = random(1, names.length);
+    //console.log('const =' + person);
+
+    
+    function chooseName(arrOfNames) {
+
+      const randomNum = random(0, arrOfNames.length-1);
+      console.log('randomNum = ' + randomNum);
+      const nameList = arrOfNames;
+
+      let chosenName = nameList[randomNum];
+      return chosenName;
+      console.log('randomNum = ' + randomNum + '. chosenName = ' + chosenName + '.');
+    }
+
+    let selectedName = chooseName(names);
+    console.log('selectedName = ' + selectedName);
+
+    // run the function once the page loads
+    para.textContent = chooseName(names);
+
+
+    // Don't edit the code below here!
     const section = document.querySelector('section');
 
     section.appendChild(para);
